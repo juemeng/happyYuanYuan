@@ -10,6 +10,29 @@ var express = require('express');
 
 var app = express();
 
+var tedious = require('tedious');
+var dataConfig = {
+	userName:'sa',
+	password:'123',
+	server:'.',
+	options:{
+		encrypt:true
+	}
+}
+
+var connection = new tedious.Connection(dataConfig);
+
+var request = new tedious.Request("select * from comment",function(err,rowCount) {
+	if(err) {
+		console.log(err);
+	}
+});
+
+request.on('row',function(colunms){
+	
+});
+
+
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'ejs');
