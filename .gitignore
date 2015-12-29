@@ -2,3 +2,7 @@
 
 /.vscode
 /build
+
+/server/node_modules
+
+/server/bin
