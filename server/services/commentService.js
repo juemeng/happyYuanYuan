@@ -26,7 +26,7 @@ commentService.add = function(comment) {
 		if(err) {
 			deferred.reject(err);
 		} else{
-			deferred.resolve("success");
+			deferred.resolve({"success":true});
 		}
 	});
 	return deferred.promise;

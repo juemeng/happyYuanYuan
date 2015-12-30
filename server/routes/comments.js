@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
 	var comment = req.body;
 	commentService.add(comment).then(function(data){
-		req.send(data);
+		res.json(data);
 	},function(err){
 		console.log(err);
 	});
