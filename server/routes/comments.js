@@ -1,14 +1,23 @@
 var express = require('express');
 var router = express.Router();
+var commentService = require('../services/commentService')
 
-var data = [
-  {id: 1, author: "Yang Gang", text: "This is one comment"},
-  {id: 2, author: "Zou Li", text: "This is second comment"}
-];
+/* GET comments listing. */
+router.get('/', function(req, res, next) {
+  commentService.getAll().then(function(data){
+	  res.json(data);
+  },function(error){
+	  console.log(error);
+  });
+});
 
-/* GET users listing. */
-router.get('/comments', function(req, res, next) {
-  res.json(data);
+router.post('/', function(req, res, next) {
+	var comment = req.body;
+	commentService.add(comment).then(function(data){
+		req.send(data);
+	},function(err){
+		console.log(err);
+	});
 });
 
 module.exports = router;

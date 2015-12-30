@@ -1,7 +1,6 @@
 /node_modules
 /.vscode
 /build
-
 /server/node_modules
-
 /server/bin
+/server/data
