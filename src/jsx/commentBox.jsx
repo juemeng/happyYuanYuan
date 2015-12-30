@@ -19,17 +19,13 @@ var CommentBox = React.createClass({
 });
 
 var Comment = React.createClass({
-    rawMarkup: function() {
-        var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
-        return { __html: rawMarkup };
-    },
     render: function() {
         return (
             <div className="comment">
                 <h2 className="commentAuthor">
-                    {this.props.author}
+                    {this.props.Author}
                 </h2>
-                <span dangerouslySetInnerHTML={this.rawMarkup()}></span>
+				{this.props.Text}
             </div>
         );
     }
@@ -41,8 +37,8 @@ var CommentList = React.createClass({
 	  if(this.props.data) {
 		  var commentNodes = this.props.data.map(function(comment) {
 			return (
-				<Comment author={comment.author} key={comment.id}>
-					{comment.text}
+				<Comment author={comment.Author} key={comment._id}>
+					{comment.Text}
 				</Comment>
 			);
       	  });
@@ -60,8 +56,8 @@ var CommentForm = React.createClass({
   render: function() {
     return (
       <form className="commentForm">
-        <input type="text" placeholder="Your name" />
-        <input type="text" placeholder="Say something..." />
+        <input type="text" placeholder="Your name" /><br/>
+        <input type="text" placeholder="Say something..." /><br/>
         <input type="submit" value="Post" />
       </form>
     );
