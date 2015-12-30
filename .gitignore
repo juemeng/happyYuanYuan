@@ -1,6 +1,6 @@
-/node_modules
+/web/node_modules
 /.vscode
-/build
+/web/build
 /server/node_modules
 /server/bin
 /server/data
