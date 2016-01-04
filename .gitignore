@@ -1,5 +1,4 @@
 /web/node_modules
-/.vscode
 /web/build
 /server/node_modules
 /server/bin

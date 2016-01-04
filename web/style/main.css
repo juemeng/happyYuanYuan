@@ -1,0 +1,33 @@
+:root {
+	--body_bg_background:#002b36;
+	--box_distence:10;
+}
+
+
+body {
+	background: var(--body_bg_background);
+	font-size: 14px;
+    line-height: 20px;
+    color: #555555;
+	font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.comment {
+	border-bottom: 1px dashed #d9d9d9;
+}
+
+.main {
+	width: 50%;
+	margin-left: 25%;
+	padding: var(--box_distence);
+	background: white;
+}
+
+.commentBox {
+	padding: var(--box_distence);
+	border:1px solid #d9d9d9;
+}
+
+.commentForm {
+	margin-top: var(--box_distence);
+}
