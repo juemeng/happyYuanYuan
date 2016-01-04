@@ -10,6 +10,7 @@ var CommentBox = React.createClass({
 	addComment: function(comment) {
 		$.post(this.props.url,comment,function(response){
 			if(response.success) {
+				comment._id = response.id;
 				var newComments = this.state.comments.concat([comment]);
 				this.setState({comments:newComments});
 			}
@@ -88,7 +89,4 @@ var CommentForm = React.createClass({
   }
 });
 
-ReactDOM.render(
-  <CommentBox url="http://localhost:3000/comments" />,
-  document.getElementById('content')  
-);
+module.exports = CommentBox;
