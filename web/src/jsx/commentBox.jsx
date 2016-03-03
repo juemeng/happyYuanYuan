@@ -1,3 +1,4 @@
+var React = require("react");
 var CommentBox = React.createClass({
 	getInitialState: function() {
     	return {comments: []};
